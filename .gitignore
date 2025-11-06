@@ -484,5 +484,6 @@ $RECYCLE.BIN/
 *.swp
 
 # Project files
-/API/appsettings.json
-/API/reactivities.db
+API/appsettings.json
+API/reactivities.db
+API/reactivities.db-shm
