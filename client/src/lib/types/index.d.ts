@@ -1,7 +1,7 @@
 type Activity = {
     id: string
     title: string
-    date: string
+    date: Date
     description: string
     category: string
     isCancelled: boolean
@@ -9,4 +9,32 @@ type Activity = {
     venue: string
     latitude: number
     longitude: number
+}
+
+export type LocationIQSuggestion = {
+    place_id: string
+    licence: string
+    osm_type: string
+    osm_id: string
+    lat: string
+    lon: string
+    display_name: string
+    address: LocationIQAddress
+    boundingbox: string[]
+}
+
+export type LocationIQAddress = {
+    government: string
+    house_number: string
+    road: string
+    quarter: string
+    suburb?: string
+    town?: string
+    village?: string
+    city?: string
+    state_district: string
+    state: string
+    postcode: string
+    country: string
+    country_code: string
 }

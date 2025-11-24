@@ -23,8 +23,6 @@ namespace Application.Activities.Commands
                 
                 context.Activities.Add(activity);
                 
-                await context.SaveChangesAsync(cancellationToken);
-                
                 var result = await context.SaveChangesAsync(cancellationToken) > 0;
 
                 if (!result) return Result<string>.Failure("Failed to create the Activity", 400);
