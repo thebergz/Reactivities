@@ -40,7 +40,8 @@ export default function ActivityForm() {
             console.log(`Current activity: ${activity}`);
             if (activity) {
                 updateActivity.mutate({...activity, ...flattenedData}, {
-                    onSuccess: () => navigate(`/activities/${activity.id}`)
+                    onSuccess: () => navigate(`/activities/${activity.id}`),
+                    onError: () => toast.error( `${updateActivity.error}`),
                 })
             } else {
                 // @ts-ignore
