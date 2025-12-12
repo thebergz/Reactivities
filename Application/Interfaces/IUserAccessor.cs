@@ -6,5 +6,6 @@ namespace Application.Interfaces
     {
         string GetUserId();
         Task<User> GetUserAsync();
+        Task<User> GetUserWithPhotosAsync();
     }
 }
