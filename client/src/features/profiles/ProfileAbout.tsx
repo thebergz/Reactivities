@@ -1,24 +1,31 @@
 import {useParams} from "react-router";
 import {useProfile} from "../../lib/hooks/useProfile.ts";
 import {Box, Button, Divider, Typography} from "@mui/material";
+import {useState} from "react";
+import ProfileEdit from "./ProfileEdit.tsx";
 
 export default function ProfileAbout() {
     const {id} = useParams();
-    const {profile} = useProfile(id);
+    const {profile, isCurrentUser} = useProfile(id);
+    const [editMode, setEditMode] = useState<boolean>(false);
 
     return (
         <Box>
-            <Box display="flex" justifyContent="space-between">
+            <Box display='flex' justifyContent='space-between'>
                 <Typography variant="h5">About {profile?.displayName}</Typography>
-                <Button>
-                    Edit profile
-                </Button>
+                {isCurrentUser &&
+                    <Button onClick={() => setEditMode(!editMode)}>
+                        Edit profile
+                    </Button>}
             </Box>
-            <Divider sx={{my: 2}}/>
+            <Divider sx={{my: 2}} />
             <Box sx={{overflow: 'auto', maxHeight: 350}}>
-                <Typography variant="body2" sx={{whitespace: 'pre-wrap'}}>
-                    {profile?.bio || "No description added yet"}
+                <Typography variant="body1" sx={{whiteSpace: 'pre-wrap'}}>
+                    {profile?.bio || 'No description added yet'}
                 </Typography>
+                {editMode && (
+                    <ProfileEdit setEditMode={setEditMode} />
+                )}
             </Box>
         </Box>
     )

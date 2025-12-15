@@ -34,7 +34,7 @@ export default function ProfileContent() {
                 sx={{borderRight: 1, height: 450, minWidth: 200}}
             >
                 {tabContent.map((tab, index) => (
-                    <Tab key={index} label={tab.label} sx={{mr: 3}} />
+                    <Tab key={index} label={tab.label} sx={{mr: 3}}/>
                 ))}
             </Tabs>
             <Box sx={{flexGrow: 1, p: 3, pt: 0}}>
@@ -42,4 +42,4 @@ export default function ProfileContent() {
             </Box>
         </Box>
     )
-}1
+}

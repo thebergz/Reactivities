@@ -46,7 +46,6 @@ export default function ProfileCard({ profile }: Props) {
                 <Box sx={{display: "flex", alignItems: "center", justifyContent: "start"}}>
                     <Person/>
                     <Typography sx={{ml: 1}}>20 Followers</Typography>
-
                 </Box>
             </Card>
         </Link>
