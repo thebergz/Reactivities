@@ -25,7 +25,7 @@ namespace Application.Activities.Commands
                 
                 var activity = mapper.Map<Activity>(request.ActivityDto);
                 
-                context.Activities.Add(activity);
+                context.Activities.Add(activity); //Note: Don't use AddAsync - just Add. Async methods here are only relevant if we need to get a DB generated value I assume such as a GUID. Check the hover over comments for the ASYNC version if required.
 
                 var attendee = new ActivityAttendee
                 {

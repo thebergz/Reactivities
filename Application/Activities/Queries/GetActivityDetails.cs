@@ -13,10 +13,10 @@ namespace Application.Activities.Queries
     {
         public class Query : IRequest<Result<ActivityDto>>
         {
-            public required string Id { get; set; }
+            public required string Id { get; set; } // This is a parameter required to perform the query
         }
         
-        public class Handler(AppDbContext context, IMapper mapper) : IRequestHandler<Query, Result<ActivityDto>>
+        public class Handler(AppDbContext context, IMapper mapper) : IRequestHandler<Query, Result<ActivityDto>> //the second TYPE parameter (Result<ActivityDto>) is what we are returning
         {
             public async Task<Result<ActivityDto>> Handle(Query request, CancellationToken cancellationToken)
             {
