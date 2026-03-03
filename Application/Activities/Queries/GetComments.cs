@@ -14,8 +14,7 @@ namespace Application.Activities.Queries
         {
             public required string ActivityId { get; set; }
 
-            public class Handler(AppDbContext context, IMapper mapper)
-                : IRequestHandler<Query, Result<List<CommentDto>>>
+            public class Handler(AppDbContext context, IMapper mapper) : IRequestHandler<Query, Result<List<CommentDto>>>
             {
                 public async Task<Result<List<CommentDto>>> Handle(Query request, CancellationToken cancellationToken)
                 {
